@@ -91,6 +91,8 @@ public class ClockDataBase extends DataBase {
     @Override
     public void setIsDel(String[] noteId){
         List<Clock> list = queryData(noteId);
+        if(list.isEmpty())
+            return;
         Clock clock = new Clock(list.get(0).getId(), list.get(0).getTime(), list.get(0).getNoteId(), true);
         clockDao.update(clock);
     }

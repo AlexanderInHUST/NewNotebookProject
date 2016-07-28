@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity
     private ListView noteListView;
     private ListView navListView;
     private TextView clockTextView;
+    private TextView emailTextView;
     private FloatingActionButton fab;
     private DrawerLayout drawer;
     private NavigationView navigationView;
@@ -101,6 +102,8 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView)findViewById(R.id.nav_view);
 
         clockTextView = (TextView)findViewById(R.id.main_subhead_description);
+
+        emailTextView = (TextView)findViewById(R.id.nav_account_e_mail);
     }
 
     @Override
@@ -226,6 +229,7 @@ public class MainActivity extends AppCompatActivity
         int clocksNum;
         Bundle bundle = getIntent().getExtras();
         account = bundle.getString("account");
+        emailTextView.setText(account);
         notes = (ArrayList<Note>) new TalkWithSQL(MainActivity.this, "note").specialTalkWithNoteForAccount(account);
         Iterator<Note> it = notes.iterator();
         while (it.hasNext()){
@@ -233,7 +237,7 @@ public class MainActivity extends AppCompatActivity
                 it.remove();
             }
         }
-        notebookList = new GetAllNotebooks(MainActivity.this).get();
+        notebookList = new GetAllNotebooks(MainActivity.this).get(account);
         new TurnOnTheClocks(MainActivity.this).turnOn();
         new AdaptNavListView(MainActivity.this, navListView, notebookList).adapt();
         new AdaptNoteListView(MainActivity.this, noteListView, notes).adapt();

@@ -18,10 +18,10 @@ public class GetAllNotebooks {
         this.context = context;
     }
 
-    public ArrayList<String> get(){
+    public ArrayList<String> get(String account){
         ArrayList<Note> notes = new ArrayList<>();
         ArrayList<String> notebooks = new ArrayList<>();
-        notes =(ArrayList<Note>) new TalkWithSQL(context, "note").getAllEntities();
+        notes =(ArrayList<Note>) new TalkWithSQL(context, "note").specialTalkWithNoteForAccount(account);
         for(Note note : notes){
             if(!notebooks.contains(note.getNotebookName()) && !note.getNotebookName().equals("DUSTBIN")){
                 notebooks.add(note.getNotebookName());

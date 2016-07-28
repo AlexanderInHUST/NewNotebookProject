@@ -319,7 +319,7 @@ public class EditActivity extends AppCompatActivity {
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()){
                 case R.id.menu_choose_another_notebook:{
-                    notebooks = new GetAllNotebooks(EditActivity.this).get();
+                    notebooks = new GetAllNotebooks(EditActivity.this).get(account);
                     getAlertDialog();
                     break;
                 }

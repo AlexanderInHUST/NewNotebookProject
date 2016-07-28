@@ -131,7 +131,7 @@ public class Note implements Editable, Uploadable, Downloadable, Deleteable {
         self.put("notebookName",this.getNotebookName());
         self.put("title",this.getTitle());
         self.put("richTextHtml",this.getRichTextHtml());
-        self.put("isAlarm",this.getIsAlarm());
+        self.put("isAlarm",false);
         self.put("account",this.getAccount());
         new CloudNote().upload(self, this);
     }
