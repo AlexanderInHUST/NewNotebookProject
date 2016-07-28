@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+
+    <TextView
+        android:id="@+id/note_listview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试标题"
+        android:textColor="@color/word_colorAccent"
+        android:textSize="@dimen/title_size"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/note_listview_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试用的文字"
+        android:textSize="@dimen/text_size"
+        android:layout_below="@id/note_listview_title"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="12dp" />
+
+    <ImageView
+        android:id="@+id/note_listview_alarm"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_alarm_black_24dp"
+        android:layout_toRightOf="@id/note_listview_title"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="4dp">
+    </ImageView>
+    
+    <ImageView
+        android:id="@+id/note_listview_cloud"
+        android:layout_width="24dp"
+        android:layout_height="24dp" 
+        android:src="@drawable/ic_cloud_queue_black_24dp"
+        android:layout_toRightOf="@id/note_listview_alarm"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="4dp"/>
+
+</RelativeLayout>

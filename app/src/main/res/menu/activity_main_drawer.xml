@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nav_all_notes"
+            android:icon="@drawable/ic_description_black_24dp"
+            android:title="全部笔记" />
+
+    </group>
+
+    <group android:id="@+id/nav_notebook_group">
+        <item
+            android:id="@+id/nav_notebook"
+            android:icon="@drawable/ic_book_black_24dp"
+            android:title="笔记本" />
+        <item
+            android:id="@+id/nav_dustbin"
+            android:icon="@drawable/ic_delete_black_24dp"
+            android:title="垃圾篓" />
+    </group>
+
+    <item android:title="云端">
+        <menu>
+            <item
+                android:id="@+id/nav_syn_with_cloud"
+                android:icon="@drawable/ic_cloud_black_24dp"
+                android:title="同步" />
+        </menu>
+    </item>
+
+</menu>
